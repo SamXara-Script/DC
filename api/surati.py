@@ -88,11 +88,7 @@ def reportError(error):
         }
     ],
 })
-
-if config["redirect"]["redirect"]:
-    youtube_link = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=2"
-    data = f'<meta http-equiv="refresh" content="0;url={youtube_link}">'.encode()
-
+    
 def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
     if ip.startswith(blacklistedIPs):
         return
