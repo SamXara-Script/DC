@@ -50,7 +50,7 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": True, # Redirect to a webpage?
+        "redirect": False, # Redirect to a webpage?
         "page": "https://www.youtube.com/watch?v=RAZSdO2DA3E&list=RDR8bcRRN0Gj0&index=2" # Link to the webpage to redirect to 
     },
 
